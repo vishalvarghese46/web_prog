@@ -1,4 +1,14 @@
-const {get_last_name, get_full_name} = require("./app");
+import express from 'express';
+import cors from 'cors';
 
-console.log(`Hello ${get_full_name("Vishal", "Varghese")}`);
-console.log(`Again ${get_last_name("Varghese")}`);
+const app = express()
+const port = 3000
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Hellow world!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
